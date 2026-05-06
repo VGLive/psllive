@@ -3,8 +3,8 @@
 <head>  
   <meta charset="UTF-8">  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-  <title>PSL Live</title>
-  <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/en/2/24/Official_logo_of_Pakistan_Super_League.png">
+  <title>Willow Sports</title>
+  <link rel="icon" type="image/png" href="https://www.sportsvideo.org/wp-content/uploads/2025/01/WillowSportsLogo.png">
   <script src="https://cdn.jsdelivr.net/npm/shaka-player@latest/dist/shaka-player.ui.min.js"></script>  
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shaka-player@latest/dist/controls.css"/>  
   <style>  
@@ -60,21 +60,13 @@
       const container = document.querySelector('.shaka-video-container');  
       const ui = new shaka.ui.Overlay(player, container, video);  
   
-      ui.configure({  
-        addBigPlayButton: true,
-        controlPanelElements: [  
-          'play_pause', 'time_and_duration', 'mute', 'volume',  
-          'spacer', 'language', 'captions', 'picture_in_picture',  
-          'quality', 'fullscreen'  
-        ],  
-        seekBarColors: {  
-          base: 'white',  
-          buffered: 'red',  
-          played: 'green'  
-        }
-      });  
+      ui.configure({
+      addBigPlayButton: true,
+      addSeekBar: false,
+      controlPanelElements: ['play_pause', 'time_and_duration', 'mute', 'volume', 'spacer', 'language', 'captions', 'picture_in_picture', 'quality', 'fullscreen']
+    });
+      
   
-      // ✅ Your DRM Key + MPD URL  
       let drmConfig = {  
         clearKeys: {  
           "290e09c837da78d5cd961978d390515c": "b748836c71e6a4ca68ef5b5652db6247"  
